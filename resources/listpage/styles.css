@@ -1,0 +1,38 @@
+body {
+  display:flex;
+  font-family: "Lato", "Helvetica", Helvetica, sans-serif;
+  background: #252525;
+  letter-spacing: 1px;
+  justify-content: left;
+  margin: 0;
+}
+
+.listContainer {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.listContainer .listItem {
+  display: flex;
+  height: 60px;
+  border-bottom: 1px #555 solid;
+  cursor: pointer;
+  transition: 100ms;
+}
+
+.listContainer .listItem:hover {
+  background-color: #282828;
+}
+
+.listContainer .listItem .listItemTitle {
+  display:flex;
+  height:100%;
+  padding-left: 20px;
+  width: fit-content;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Arial;
+  font-weight: bold;
+  color: #eee
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="resources/adminpage/styles.css" />
+		<title>Filehost Admin Page</title>
+	</head>
+	<body> 
+		<div class="listContainer">
+			<% for(x in data) { %>
+				<div class="listItem" data-filename="<%= data[x] %>" onclick="selectFile(this)">
+					<div class="listItemTitle"><%= data[x] %></div>
+				</div>
+			<% } %>
+		</div>
+		<div style="display: flex; flex-direction: column">
+			<div class="mainform">
+				<div style="display: flex; flex-direction: row">
+					<div style="display: flex; flex-direction: column">
+						<input type="text" class="textInputBox" id="fileNameInputBox" name="fileName" placeholder="File Name">
+					</div>
+				</div>
+				<button onclick="updateFilename()" class="marginTop" id="updateButton">Update File Name</button>
+				<button onclick="copyLink()" class="marginTop" id="copyButton">Copy download Link</button>
+			</div>
+
+			<div class="mainform"></div> <!-- Just for spacing -->
+
+			<div class="mainform">
+				<button onclick="deleteFile()" id="deleteButton">Delete this Item</button>
+			</div>
+		</div>
+
+		<div class="form-wrapper">
+			<a id="fileSizeDiv">Max File Size 10GB</a>
+			<form id="submitForm" class="mainform2" action="/uploadfile" method="post" enctype="multipart/form-data">
+				<input type="file" id="fileUpload" name="mainFile" onchange="changeText(this.files)">
+				<label class="button" id="fileUploadButton" for="fileUpload"><a class="buttonLabel">Select a file</a></label>
+				<input class="button" type="submit" id="fuckinsenditbutton" value="Fuckin' send it" disabled onclick="uploadingAnimation(this)">
+			</form>
+		</div>
+		<script src="./resources/adminpage/scripts.js">
+		</script> 
+	</body>
+</html>
+

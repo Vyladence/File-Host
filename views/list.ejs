@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="resources/listpage/styles.css" />
+		<title>Filehost Admin Page</title>
+	</head>
+	<body> 
+		<div class="listContainer">
+			<% for(x in data) { %>
+				<div class="listItem" data-filename="<%= data[x] %>" onclick="downloadFile(this)">
+					<div class="listItemTitle"><%= data[x] %></div>
+				</div>
+			<% } %>
+		</div>
+		<script src="./resources/listpage/scripts.js">
+		</script> 
+	</body>
+</html>
+
